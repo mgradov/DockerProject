@@ -1,4 +1,4 @@
-version: "2"
+version: "2.1"
 
 # type the following in lisp code in REPL to get Hello World output:
 # sbcl
@@ -9,6 +9,9 @@ services:
   lisp:
 
     # pulls lisp image from my docker account
+    # alternativley you can do: 
+    # build: '.'
+    # to pull image from local Dockerfile
     image: rahhonatake/lisp:latest
 
     container_name: docker_project
