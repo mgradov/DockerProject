@@ -1,0 +1,14 @@
+version: "1"
+
+services:
+
+  lisp:
+    image: rahhonatake/lisp:latest
+    container_name: project
+    volumes:
+      - ./:/usr/src/
+    stdin_open: true
+    tty: true
+    command: sbcl
+    # type the following in lisp code in REPL:
+    # (format t "hello, world!")'
