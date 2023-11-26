@@ -1,14 +1,28 @@
-version: "1"
+version: "2"
+
+# type the following in lisp code in REPL to get Hello World output:
+# sbcl
+# (format t "hello, world!")
 
 services:
 
   lisp:
+
+    # pulls lisp image from my docker account
     image: rahhonatake/lisp:latest
-    container_name: project
+
+    container_name: docker_project
+
+    # .git, Dockerfile, and docker-compose.yaml files
+    # will be linked to container's working directory
     volumes:
       - ./:/usr/src/
+    
+    # keeps the container's standard input (stdin) open
+    # even if not attached to any interactive session
     stdin_open: true
+
+    # allocates terminal inside new container often
+    # used in conjunction with stdin_open for containers
+    # that expect to be attached to a terminal (TTY)
     tty: true
-    command: sbcl
-    # type the following in lisp code in REPL:
-    # (format t "hello, world!")'
